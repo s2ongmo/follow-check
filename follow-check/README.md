@@ -16,4 +16,4 @@ Instagram follow-back check program
 - tkinter
 
 
-**This project may continue to be updated**
+***This project may continue to be updated***
