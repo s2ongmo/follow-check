@@ -15,4 +15,5 @@ Instagram follow-back check program
 - BeautifulSoup
 - tkinter
 
-***This project may continue to be updated***
+------
+**This project may continue to be updated**
