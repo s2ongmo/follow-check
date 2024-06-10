@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="![insta](https://github.com/s2ongmo/follow-check/assets/48545752/7bde1614-203f-4826-bc73-b5bc9194c496)">
+    <img src="https://github.com/s2ongmo/follow-check/assets/48545752/7bde1614-203f-4826-bc73-b5bc9194c496">
 </p>
 # What is
 Instagram follow-back check program
