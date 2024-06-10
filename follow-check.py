@@ -13,36 +13,23 @@ from selenium.common.exceptions import NoSuchElementException
 
 def count():
     soup = BeautifulSoup(browser.page_source, 'html.parser')
+    # 'notranslate' is the only class of <a> tags provided to each user
     lists = soup.select('a.notranslate')
     list_text = [item.get_text() for item in lists]
-    list_text = [text.replace('인증됨', '') for text in list_text]
+    list_text = [text.replace('인증됨', '☑') for text in list_text]
     return list_text
-
-# def scroll():
-#     try:
-#         pop_up_window = WebDriverWait(browser, 10).until(
-#             EC.element_to_be_clickable((By.CLASS_NAME, '_aano')))
-#         last_height = browser.execute_script("return arguments[0].scrollHeight", pop_up_window)
-#         while True:
-#             browser.execute_script("arguments[0].scrollTop = arguments[0].scrollHeight", pop_up_window)
-#             # scroll Time
-#             time.sleep(1)
-#             new_height = browser.execute_script("return arguments[0].scrollHeight", pop_up_window)
-#             if new_height == last_height:
-#                 break
-#             last_height = new_height
-#     except TimeoutException:
-#         print("Failed to load the scrollable popup window.")
 
 
 def scroll():
     try:
+        # Wait up to 10 seconds for the element to come out
         pop_up_window = WebDriverWait(browser, 10).until(
-            EC.presence_of_element_located((By.CLASS_NAME, '_aano')))
+            # Find the class '_aano'
+            # '_aano' is the only class given to a follower or a following list window.
+            EC.presence_of_element_located((By.CLASS_NAME, 'xyi19xy')))
         while True:
-            # 스크롤 다운
+            # If you substitute the scroll height of the found element into the current scroll height, the scroll will come down
             browser.execute_script("arguments[0].scrollTop = arguments[0].scrollHeight", pop_up_window)
-            # time.sleep(1)  # 동적 로딩 대기
 
             try:
                 # 로딩 스피너 확인
